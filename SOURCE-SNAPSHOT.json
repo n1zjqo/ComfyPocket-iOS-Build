@@ -1,0 +1,403 @@
+{
+  "format": 1,
+  "purpose": "reviewed-source-only-build-snapshot",
+  "contains_git_history": false,
+  "checks": "common credential and personal-path patterns; manual review still required",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 123,
+      "sha256": "31280570b8821bdf3b35a253d91cb8555d3a2b2bfcac9ecf35b6dc0d43cba73b"
+    },
+    {
+      "path": ".github/workflows/build-ios.yml",
+      "bytes": 2109,
+      "sha256": "0bccbcfd81232bea0ad22aa20eeb062f281717176b30b54c037120c1096aacdd"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 72,
+      "sha256": "6ca586d6d14b7bfc1d5fc3ae876ea5f682f9d869cfbd599843b1a60c1137bef0"
+    },
+    {
+      "path": "App/AppState.swift",
+      "bytes": 22818,
+      "sha256": "da13061e5c8593078757704e434d18190fdb5f3bf5a82056e473c4ce303d28d6"
+    },
+    {
+      "path": "App/ArtworkGlassFrame.swift",
+      "bytes": 3211,
+      "sha256": "6f017d13cef646cb49fcfff4e13a155798b2c1b697a57311c9a9919b1735ff85"
+    },
+    {
+      "path": "App/ArtworkPreview.swift",
+      "bytes": 7645,
+      "sha256": "7e817c259704f8bd99dd1732c64d629a54a422b504f0b5b5d20c356920467d0e"
+    },
+    {
+      "path": "App/Assets.xcassets/AppIcon.appiconset/Contents.json",
+      "bytes": 2134,
+      "sha256": "09a56d045a61cc2a3138dfc368012842463c533e1c0ceed3180713f284e9e976"
+    },
+    {
+      "path": "App/Assets.xcassets/AppIcon.appiconset/icon-1024.png",
+      "bytes": 9274,
+      "sha256": "6e4bafa8070d49942a0de5c5b6d32332381c9abfd7d3d26b3f69a917324be408"
+    },
+    {
+      "path": "App/Assets.xcassets/AppIcon.appiconset/icon-120.png",
+      "bytes": 4253,
+      "sha256": "bb718db27af55c6557690be2731a0d60325af4f88efb04cffcd99265d5501f9a"
+    },
+    {
+      "path": "App/Assets.xcassets/AppIcon.appiconset/icon-152.png",
+      "bytes": 5291,
+      "sha256": "b7acf53a506b4e0eaca8489798513e2a73e7e91c39cddcec26704ee953b30f9a"
+    },
+    {
+      "path": "App/Assets.xcassets/AppIcon.appiconset/icon-167.png",
+      "bytes": 5746,
+      "sha256": "8ec3e5a5d0eaa467bf9478b83709ca2cea79710a5e52f4e17e30b897c137de8b"
+    },
+    {
+      "path": "App/Assets.xcassets/AppIcon.appiconset/icon-180.png",
+      "bytes": 6228,
+      "sha256": "3086ee9de8e764b7b994a8b7d8463105cbb423cd11abab1cc34b634db33e9cd9"
+    },
+    {
+      "path": "App/Assets.xcassets/AppIcon.appiconset/icon-20.png",
+      "bytes": 782,
+      "sha256": "ce521ddc1c224fbd49c6da6efe263c35130409b85e569a2f3dc5b195abc65b33"
+    },
+    {
+      "path": "App/Assets.xcassets/AppIcon.appiconset/icon-29.png",
+      "bytes": 1122,
+      "sha256": "4987041c63aaf3d04f738e204794cb2dc1aa2b70f1df44b3aaf66524c001693a"
+    },
+    {
+      "path": "App/Assets.xcassets/AppIcon.appiconset/icon-40.png",
+      "bytes": 1497,
+      "sha256": "78e11642f26ef0d921f564da63d49a8d448beb238773f14a6e09566bafd59485"
+    },
+    {
+      "path": "App/Assets.xcassets/AppIcon.appiconset/icon-58.png",
+      "bytes": 2170,
+      "sha256": "ba22ce15512dffd38b8c87b71d949281f9141f6b69a92631f956e2042d877ea0"
+    },
+    {
+      "path": "App/Assets.xcassets/AppIcon.appiconset/icon-60.png",
+      "bytes": 2210,
+      "sha256": "59c176df70b0045c453193e801dd2673ddf8d72867f5365c4b7d4ede07020a23"
+    },
+    {
+      "path": "App/Assets.xcassets/AppIcon.appiconset/icon-76.png",
+      "bytes": 2861,
+      "sha256": "768100c085f9bdb1a0485c5c0f787a45f844a4206a286be2a981abafa24ae988"
+    },
+    {
+      "path": "App/Assets.xcassets/AppIcon.appiconset/icon-80.png",
+      "bytes": 2926,
+      "sha256": "08fc951a35410e4abd05eb55055215753a760dbf7183c6b447ef0a76841c0dac"
+    },
+    {
+      "path": "App/Assets.xcassets/AppIcon.appiconset/icon-87.png",
+      "bytes": 3145,
+      "sha256": "3dd55c86d8e8017b9f58ffd3e79afd49556bd74299de07840006ad4eaf1b742b"
+    },
+    {
+      "path": "App/Assets.xcassets/Contents.json",
+      "bytes": 44,
+      "sha256": "e5bedcae70b84e6cbdf077f5c2ba2fdd1d6221ffce88c2bca132da00e8cd8840"
+    },
+    {
+      "path": "App/CanvasClearScreen.swift",
+      "bytes": 7392,
+      "sha256": "9e996160e2d00fbafe8b5473326169b5a808d5dbb095973772ab9049417836c3"
+    },
+    {
+      "path": "App/ComfyClient.swift",
+      "bytes": 7679,
+      "sha256": "3f66c4c118c15cc06bf0b29732693770cb4f2ffbf1456440f5b09970df9fb37c"
+    },
+    {
+      "path": "App/ComfyPocket.entitlements",
+      "bytes": 375,
+      "sha256": "215254d745cf9a84dfb97a5591453e9ce492127481fa99244872a9898c7b33cd"
+    },
+    {
+      "path": "App/ComfyPocketApp.swift",
+      "bytes": 2461,
+      "sha256": "957f9becce4034d92272ca810f3bc42e296492a3aba01e17d6aa7c9d706931a2"
+    },
+    {
+      "path": "App/ConversationResultBubble.swift",
+      "bytes": 2291,
+      "sha256": "536da9d22fa769a95d8b75bc602e6e071b633dea89d62de04312841cb2927b50"
+    },
+    {
+      "path": "App/DesignSystem.swift",
+      "bytes": 3486,
+      "sha256": "592913fd8362cdd6a1de8c7e30465acfbb6867961ecb6bf2cd9bddb5f5a50bf7"
+    },
+    {
+      "path": "App/FuyuArtworkCanvas.swift",
+      "bytes": 1712,
+      "sha256": "c4595b35f9c106d30f2e033c12770eabd7185ac5c942f1cdfaf223aa7ca6aace"
+    },
+    {
+      "path": "App/GalleryView.swift",
+      "bytes": 9248,
+      "sha256": "16f76b1d09397a3202ad1fd31152158e9310ae3e5eaff91eb590176814e4a7d1"
+    },
+    {
+      "path": "App/GenerationEngine.swift",
+      "bytes": 15893,
+      "sha256": "f6f4232fed53fe228c40643392ca7985bad04b2d198b1f262d7b0347fed0b225"
+    },
+    {
+      "path": "App/GenerationView.swift",
+      "bytes": 18122,
+      "sha256": "b7c7e9b8353b0a6786e2ee5faabfdd5d91cbe55438ec2613a048ffed8f940573"
+    },
+    {
+      "path": "App/MediaSupport.swift",
+      "bytes": 4803,
+      "sha256": "6a0d88c59599125575f4e3096bd80c7cf52a91b531884aa40d33efa8518bce34"
+    },
+    {
+      "path": "App/Models.swift",
+      "bytes": 3357,
+      "sha256": "29c1a015396ff2e6aefdb8179041685f29bc297dc8167fcc09be17091bf8f017"
+    },
+    {
+      "path": "App/ParametersView.swift",
+      "bytes": 2624,
+      "sha256": "e4bc595bda07d2f0819b7d07b3f09cb5a52295e5add7ddbae829970ebed32a11"
+    },
+    {
+      "path": "App/PromptTextView.swift",
+      "bytes": 4288,
+      "sha256": "518511607307ca12e25d6ae10bee48c0c103eada66f00d9e087b369eb24d8590"
+    },
+    {
+      "path": "App/SettingsView.swift",
+      "bytes": 7937,
+      "sha256": "e1bfbf9f1005a3b61dece0f773a38355fbfe198756fdcce85058b64dae141279"
+    },
+    {
+      "path": "App/Storage.swift",
+      "bytes": 4167,
+      "sha256": "793085ef4fd8e8a5c357af517f092fcfb49a6e37010efee22846499240aad0c0"
+    },
+    {
+      "path": "App/WorkflowApplicationFixture.swift",
+      "bytes": 4795,
+      "sha256": "3b716b4bd466e3fb762a1c7a2b72e5cffea55598cdbb29851f7dfdd101b86e20"
+    },
+    {
+      "path": "App/WorkflowApplicationView.swift",
+      "bytes": 7134,
+      "sha256": "4bdbc672abf23ce31f032de42945efd44061786a83d62a16d57b3487ddf83c21"
+    },
+    {
+      "path": "App/WorkflowParametersEditor.swift",
+      "bytes": 16400,
+      "sha256": "d6eb020b94ea5bef0aeb2bd7c1628bcb5a0a0448bc4175adceba9dfdee28a0bf"
+    },
+    {
+      "path": "App/WorkflowsView.swift",
+      "bytes": 7297,
+      "sha256": "10b9ecec5cd7fbdbb633e28c692293221b5b7f0ec5e6de894badd160e28b191b"
+    },
+    {
+      "path": "AppTests/ComfyClientTests.swift",
+      "bytes": 6138,
+      "sha256": "2ec2e92428b0d1eef4fe2b2a2d271eec0912e9683b582b5f5456cefca72b9214"
+    },
+    {
+      "path": "AppTests/ConversationStateTests.swift",
+      "bytes": 6544,
+      "sha256": "b0d6364d437039ff1847847fca1d6ebd535b96dab21e4a3f73de09d6ab94fb08"
+    },
+    {
+      "path": "AppTests/GenerationIntegrationTests.swift",
+      "bytes": 7948,
+      "sha256": "d3ddb90461f937215b1d7d495703d16b3bdf784bf85e9f491748ae3ccb618af2"
+    },
+    {
+      "path": "AppTests/LayoutSnapshotTests.swift",
+      "bytes": 18118,
+      "sha256": "7f7be0386d49b9ae661715a4e1a2780a89878c96390812f4f10cab402f02816e"
+    },
+    {
+      "path": "AppTests/ParameterDraftStateTests.swift",
+      "bytes": 6356,
+      "sha256": "7aa8111314345c6400bdc6d276c0d406160c7a03f7e90caaaf1e4dd6a468ccf8"
+    },
+    {
+      "path": "Core/Package.swift",
+      "bytes": 380,
+      "sha256": "b08f834f91a53ba96eedf193cd43632326c60b0eb70f672e5f92161a6585c927"
+    },
+    {
+      "path": "Core/Sources/ComfyCore/JSONValue.swift",
+      "bytes": 3738,
+      "sha256": "614ba136728a7f1104c4246106d1e47fbfcfcb5cab674182d166c59940cd2913"
+    },
+    {
+      "path": "Core/Sources/ComfyCore/OutputPresentation.swift",
+      "bytes": 968,
+      "sha256": "0d0272459a02a3c3c33ab0647f11a184404c9a3d9a34f9d1d20d78829479317f"
+    },
+    {
+      "path": "Core/Sources/ComfyCore/Outputs.swift",
+      "bytes": 3650,
+      "sha256": "111a8f8031ce5d0bdda036fd9fda0ca006f3f84d65b2d0592f8aea91f0c741c6"
+    },
+    {
+      "path": "Core/Sources/ComfyCore/RayQueue.swift",
+      "bytes": 4939,
+      "sha256": "340c102adcd78283fff9950e686dbd903fb53d6b2c698b325854e01860334888"
+    },
+    {
+      "path": "Core/Sources/ComfyCore/Workflow.swift",
+      "bytes": 10505,
+      "sha256": "b1db6cbe7ffdaa3afaa4150f2737026b7e0223d807ecd673e216b64a4e7b280d"
+    },
+    {
+      "path": "Core/Sources/ComfyCore/WorkflowApplication.swift",
+      "bytes": 4243,
+      "sha256": "4040336ab04156e120a52b6a1df4e7fde3b76dfb30e550feab9f8104d6876a53"
+    },
+    {
+      "path": "Core/Sources/ComfyCore/WorkflowBuilder.swift",
+      "bytes": 8671,
+      "sha256": "bd77c0426e06b6e0848ff7a86e942dbc0f034af4b545d86b13b8614bd4f50161"
+    },
+    {
+      "path": "Core/Sources/ComfyCore/WorkflowParameters.swift",
+      "bytes": 10013,
+      "sha256": "44580d78b3615ffe9074f78f99f683dcf65fdacde484c785cf09b2a97f1aa456"
+    },
+    {
+      "path": "Core/Tests/ComfyCoreTests/ComfyCoreTests.swift",
+      "bytes": 8974,
+      "sha256": "960b7d3f7baac0a35a28c9035e9ea3ee55dc07c18523571979edcf0c390a3c78"
+    },
+    {
+      "path": "Core/Tests/ComfyCoreTests/Fixtures/DualStage4K.json",
+      "bytes": 7187,
+      "sha256": "7882464dc71cbbe79aa04ac467a2cdc763ac68c0c581928425ba60599fb20c89"
+    },
+    {
+      "path": "Core/Tests/ComfyCoreTests/OutputPresentationTests.swift",
+      "bytes": 1934,
+      "sha256": "2fc8d71740550eac2dbda8e844a0b673d07dd4ce89f2a6dc59962fd0b643070a"
+    },
+    {
+      "path": "Core/Tests/ComfyCoreTests/WorkflowApplicationTests.swift",
+      "bytes": 8403,
+      "sha256": "cb8d4b74181eb8337ea18022194c0a1cfb72460eb3f69675c3c8fba5d6dde740"
+    },
+    {
+      "path": "Core/Tests/ComfyCoreTests/WorkflowParametersTests.swift",
+      "bytes": 8801,
+      "sha256": "58f1bdd60058076e2cb050e648cf0651dc7dde3082bf07d79116118b89f49bb1"
+    },
+    {
+      "path": "Examples/txt2img-api.json",
+      "bytes": 936,
+      "sha256": "29445296499abc565f6664bf24676d6e3ae9109332385dec6d90a7e7bc19a9f8"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 35149,
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+    },
+    {
+      "path": "project.yml",
+      "bytes": 2443,
+      "sha256": "17f8ed1d37ac11e5877eaf162b57cb6dac7ef48b20d436c7b01d312ff9ab6095"
+    },
+    {
+      "path": "PUBLIC-BUILD-README.md",
+      "bytes": 2376,
+      "sha256": "be10191a419ab245341a4b4462ae6c07ccd79ce38a3eabdf2a8eb97b6de79107"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2376,
+      "sha256": "be10191a419ab245341a4b4462ae6c07ccd79ce38a3eabdf2a8eb97b6de79107"
+    },
+    {
+      "path": "scripts/build-ipa.sh",
+      "bytes": 3918,
+      "sha256": "cc85c013c7dfe4f47af8d74a51609fede5caef8d10ddf7be031e3cae0f1310a0"
+    },
+    {
+      "path": "scripts/comfyui-ci-requirements.lock.txt",
+      "bytes": 6154,
+      "sha256": "52328513b7c459ccae8ac38ec703cbac7cb92ba77cfac640e8e0f1deb8dfe3de"
+    },
+    {
+      "path": "scripts/generate-icon.py",
+      "bytes": 1665,
+      "sha256": "f65cf4c7d7a7c24fcd24cb154f09e52020ac4b5105e4c5744e05ed3a13c837a3"
+    },
+    {
+      "path": "scripts/install-xcodegen.sh",
+      "bytes": 545,
+      "sha256": "4ed5ec9527d3f545fecbc4906c2ac65162c37e2f3d48988d4714afee6328e1db"
+    },
+    {
+      "path": "scripts/prepare-public-build.py",
+      "bytes": 4354,
+      "sha256": "8c5d374d213f32da8fb64df1b7fd361e074e0b56e69cedc23909c8c2dc9f88ee"
+    },
+    {
+      "path": "scripts/start-test-server.sh",
+      "bytes": 1898,
+      "sha256": "57e1ec99544b807c13e03785fb4a6892a6a08f845b6d9fb63848ed23d50f9668"
+    },
+    {
+      "path": "scripts/test-server-constraints.txt",
+      "bytes": 86,
+      "sha256": "68db37539a0d443a3b39f99e2e30dabd99da728d2006396aa596953af5e1dc24"
+    },
+    {
+      "path": "scripts/test_public_snapshot.py",
+      "bytes": 3240,
+      "sha256": "975bf97207245238374ede52d500645dfdbe4d2c3de8b4186f33d42398f7ad25"
+    },
+    {
+      "path": "scripts/test_verify_ipa.py",
+      "bytes": 2490,
+      "sha256": "f1be897ac0e69879099a6c7a8e14a687b07c23d43096b71390b7b1144088e8d2"
+    },
+    {
+      "path": "scripts/verify-ipa.py",
+      "bytes": 3038,
+      "sha256": "d48c2c127b55498fe80dc7f2a4f1e940f264664171c0d251ebdf2fafa9f7e413"
+    },
+    {
+      "path": "scripts/verify-source-snapshot.py",
+      "bytes": 1958,
+      "sha256": "33756f44c3cd6a721a94d301c86ef65e16fcbe08fbaf0479e2829ca32a057605"
+    },
+    {
+      "path": "SECURITY.md",
+      "bytes": 3081,
+      "sha256": "bdf8efdd8837d638c8bcb46974ab791d705d5304e09c4e8cdee5a9dcb03a6fe7"
+    },
+    {
+      "path": "THIRD_PARTY.md",
+      "bytes": 940,
+      "sha256": "c7de66f0a0ffd12729e82d6fd825e006982cba0c4e506d498885419acc6002a8"
+    },
+    {
+      "path": "UITests/ComfyPocketUITests.swift",
+      "bytes": 20324,
+      "sha256": "1b096a0f789998b664291800964321c326f9712a88eb71b2d375f1e83f02028b"
+    }
+  ]
+}

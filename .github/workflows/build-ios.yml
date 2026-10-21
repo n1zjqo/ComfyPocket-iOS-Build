@@ -1,0 +1,62 @@
+name: Build iOS 15 IPA
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: macos-15
+    timeout-minutes: 45
+    env:
+      PIP_DISABLE_PIP_VERSION_CHECK: "1"
+      PIP_NO_INPUT: "1"
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+          fetch-depth: 1
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1
+        with:
+          python-version: "3.12.10"
+      - name: Verify reviewed source snapshot
+        run: |
+          mkdir -p build
+          git rev-parse HEAD | tee build/source-revision.txt
+          python3 scripts/test_public_snapshot.py
+          if [[ -f SOURCE-SNAPSHOT.json ]]; then
+            python3 scripts/verify-source-snapshot.py
+            shasum -a 256 SOURCE-SNAPSHOT.json | tee build/source-snapshot-sha256.txt
+          fi
+      - name: Install verified XcodeGen 2.44.1
+        run: bash scripts/install-xcodegen.sh
+      - name: Start real ComfyUI CPU test server
+        run: bash scripts/start-test-server.sh
+      - name: Test and build device IPA
+        run: bash scripts/build-ipa.sh
+      - name: Upload IPA and SHA256
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: ComfyPocket-iOS15-TrollStore
+          retention-days: 7
+          path: |
+            build/ComfyPocket-iOS15.ipa
+            build/ComfyPocket-iOS15.ipa.sha256
+          if-no-files-found: error
+      - name: Upload build diagnostics
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: Build-diagnostics
+          retention-days: 7
+          path: |
+            build/*.log
+            build/*.txt
+            build/*.xcresult
+            build/screenshots
+          if-no-files-found: ignore
+      - name: Stop integration test server
+        if: always()
+        run: |
+          if [[ -f build/comfyui-test-server.pid ]]; then
+            kill "$(cat build/comfyui-test-server.pid)" 2>/dev/null || true
+          fi

@@ -1,0 +1,84 @@
+name: ComfyPocket
+options:
+  bundleIdPrefix: com.ray
+  deploymentTarget:
+    iOS: "15.0"
+  xcodeVersion: "16.0"
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    IPHONEOS_DEPLOYMENT_TARGET: "15.0"
+    TARGETED_DEVICE_FAMILY: "1,2"
+    ENABLE_USER_SCRIPT_SANDBOXING: YES
+packages:
+  ComfyCore:
+    path: Core
+targets:
+  ComfyPocket:
+    type: application
+    platform: iOS
+    sources:
+      - path: App
+        excludes: [Info.plist]
+    info:
+      path: App/Info.plist
+      properties:
+        CFBundleDisplayName: Comfy 随行
+        CFBundleShortVersionString: "0.3.0"
+        CFBundleVersion: "7"
+        UILaunchScreen: {}
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: false
+        NSLocalNetworkUsageDescription: 连接你自己的 ComfyUI 服务器，提交工作流并下载生成结果。
+        NSPhotoLibraryAddUsageDescription: 将你选择的生成作品保存到系统相册。
+        NSAppTransportSecurity:
+          NSAllowsArbitraryLoads: true
+        UISupportedInterfaceOrientations: [UIInterfaceOrientationPortrait, UIInterfaceOrientationLandscapeLeft, UIInterfaceOrientationLandscapeRight]
+        UIFileSharingEnabled: false
+        LSSupportsOpeningDocumentsInPlace: true
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.ray.comfypocket
+        PRODUCT_NAME: ComfyPocket
+        GENERATE_INFOPLIST_FILE: NO
+        CODE_SIGN_ENTITLEMENTS: App/ComfyPocket.entitlements
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+    dependencies:
+      - package: ComfyCore
+  ComfyPocketTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources: [AppTests]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.ray.comfypocket.tests
+        GENERATE_INFOPLIST_FILE: YES
+        TEST_HOST: "$(BUILT_PRODUCTS_DIR)/ComfyPocket.app/ComfyPocket"
+        BUNDLE_LOADER: "$(TEST_HOST)"
+    dependencies:
+      - target: ComfyPocket
+      - package: ComfyCore
+  ComfyPocketUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources: [UITests]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.ray.comfypocket.uitests
+        GENERATE_INFOPLIST_FILE: YES
+    dependencies:
+      - target: ComfyPocket
+schemes:
+  ComfyPocket:
+    build:
+      targets:
+        ComfyPocket: all
+    run:
+      config: Debug
+    test:
+      config: Debug
+      targets:
+        - ComfyPocketTests
+        - ComfyPocketUITests
+    archive:
+      config: Release

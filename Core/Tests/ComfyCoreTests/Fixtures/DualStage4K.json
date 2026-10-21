@@ -1,0 +1,415 @@
+{
+  "8": {
+    "inputs": {
+      "samples": [
+        "26",
+        0
+      ],
+      "vae": [
+        "96",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE解码"
+    }
+  },
+  "9": {
+    "inputs": {
+      "text": [
+        "16",
+        0
+      ],
+      "clip": [
+        "98",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP文本编码"
+    }
+  },
+  "10": {
+    "inputs": {
+      "conditioning": [
+        "9",
+        0
+      ]
+    },
+    "class_type": "ConditioningZeroOut",
+    "_meta": {
+      "title": "条件零化"
+    }
+  },
+  "11": {
+    "inputs": {
+      "text": [
+        "16",
+        0
+      ],
+      "clip": [
+        "95",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP文本编码"
+    }
+  },
+  "12": {
+    "inputs": {
+      "tile_size": 512,
+      "overlap": 64,
+      "temporal_size": 64,
+      "temporal_overlap": 8,
+      "pixels": [
+        "27",
+        0
+      ],
+      "vae": [
+        "99",
+        0
+      ]
+    },
+    "class_type": "VAEEncodeTiled",
+    "_meta": {
+      "title": "4K 分块 VAE 编码"
+    }
+  },
+  "13": {
+    "inputs": {
+      "text": "测试预览",
+      "anything": [
+        "16",
+        0
+      ]
+    },
+    "class_type": "easy showAnything",
+    "_meta": {
+      "title": "当前提示词预览"
+    }
+  },
+  "14": {
+    "inputs": {
+      "text": "",
+      "clip": [
+        "95",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "Z-Image 负面提示词 · 可先留空"
+    }
+  },
+  "15": {
+    "inputs": {
+      "tile_size": 512,
+      "overlap": 64,
+      "temporal_size": 64,
+      "temporal_overlap": 8,
+      "samples": [
+        "28",
+        0
+      ],
+      "vae": [
+        "99",
+        0
+      ]
+    },
+    "class_type": "VAEDecodeTiled",
+    "_meta": {
+      "title": "4K 分块 VAE 解码"
+    }
+  },
+  "16": {
+    "inputs": {
+      "prompts": "测试提示词一\n---\n测试提示词二",
+      "format": "用 --- 分隔",
+      "first": 1,
+      "last": 0,
+      "base_seed": 123456,
+      "output_folder": "NAS/资产库",
+      "seed_mode": "每张随机"
+    },
+    "class_type": "RayPromptQueue",
+    "_meta": {
+      "title": "队列提示词 · 纯文生图 · 每张随机"
+    }
+  },
+  "17": {
+    "inputs": {
+      "filename_prefix": [
+        "16",
+        1
+      ],
+      "images": [
+        "15",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "最终 4K 图片 · 2160×3840"
+    }
+  },
+  "18": {
+    "inputs": {
+      "shift": 5,
+      "sampling": "flow",
+      "model": [
+        "68",
+        0
+      ]
+    },
+    "class_type": "ModelSamplingAuraFlow",
+    "_meta": {
+      "title": "采样算法（AuraFlow）"
+    }
+  },
+  "20": {
+    "inputs": {
+      "unet_name": "fixture.safetensors",
+      "weight_dtype": "default"
+    },
+    "class_type": "UNETLoader",
+    "_meta": {
+      "title": "Z-Image Base · 扩散模型"
+    }
+  },
+  "23": {
+    "inputs": {
+      "width": [
+        "92",
+        0
+      ],
+      "height": [
+        "93",
+        0
+      ],
+      "batch_size": 1
+    },
+    "class_type": "EmptySD3LatentImage",
+    "_meta": {
+      "title": "Z-Image 空 Latent · 16 通道"
+    }
+  },
+  "24": {
+    "inputs": {
+      "value_1": "((a*min(1,2048/max(a,b))+15)//16)*16",
+      "value_2": "((b*min(1,2048/max(a,b))+15)//16)*16",
+      "a": [
+        "92",
+        0
+      ],
+      "b": [
+        "93",
+        0
+      ]
+    },
+    "class_type": "SimpleMathDual+",
+    "_meta": {
+      "title": "第一段尺寸 · 长边限制 2048"
+    }
+  },
+  "25": {
+    "inputs": {
+      "upscale_method": "nearest-exact",
+      "width": [
+        "24",
+        0
+      ],
+      "height": [
+        "24",
+        2
+      ],
+      "crop": "center",
+      "samples": [
+        "23",
+        0
+      ]
+    },
+    "class_type": "LatentUpscale",
+    "_meta": {
+      "title": "第一段潜空间 · 1152×2048"
+    }
+  },
+  "26": {
+    "inputs": {
+      "add_noise": "enable",
+      "noise_seed": [
+        "16",
+        2
+      ],
+      "steps": 30,
+      "cfg": 4,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "start_at_step": 0,
+      "end_at_step": 30,
+      "return_with_leftover_noise": "disable",
+      "model": [
+        "97",
+        0
+      ],
+      "positive": [
+        "11",
+        0
+      ],
+      "negative": [
+        "14",
+        0
+      ],
+      "latent_image": [
+        "25",
+        0
+      ]
+    },
+    "class_type": "KSamplerAdvanced",
+    "_meta": {
+      "title": "第一段：Z-Image Base · 30 步 CFG 4"
+    }
+  },
+  "27": {
+    "inputs": {
+      "upscale_method": "lanczos",
+      "width": [
+        "92",
+        0
+      ],
+      "height": [
+        "93",
+        0
+      ],
+      "crop": "disabled",
+      "image": [
+        "8",
+        0
+      ]
+    },
+    "class_type": "ImageScale",
+    "_meta": {
+      "title": "放大至目标 4K · 送入 Krea2 重绘"
+    }
+  },
+  "28": {
+    "inputs": {
+      "add_noise": "enable",
+      "noise_seed": [
+        "16",
+        2
+      ],
+      "steps": 10,
+      "cfg": 1,
+      "sampler_name": "euler",
+      "scheduler": "simple",
+      "start_at_step": 6,
+      "end_at_step": 1000,
+      "return_with_leftover_noise": "disable",
+      "model": [
+        "18",
+        0
+      ],
+      "positive": [
+        "9",
+        0
+      ],
+      "negative": [
+        "10",
+        0
+      ],
+      "latent_image": [
+        "12",
+        0
+      ]
+    },
+    "class_type": "KSamplerAdvanced",
+    "_meta": {
+      "title": "第二段：Krea2 · 4K 细化"
+    }
+  },
+  "68": {
+    "inputs": {
+      "ckpt_name": "fixture.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Checkpoint加载器（简易）"
+    }
+  },
+  "92": {
+    "inputs": {
+      "value": 2160
+    },
+    "class_type": "PrimitiveInt",
+    "_meta": {
+      "title": "最终宽度 · 2160"
+    }
+  },
+  "93": {
+    "inputs": {
+      "value": 3840
+    },
+    "class_type": "PrimitiveInt",
+    "_meta": {
+      "title": "最终高度 · 3840"
+    }
+  },
+  "95": {
+    "inputs": {
+      "clip_name": "fixture.safetensors",
+      "type": "lumina2",
+      "device": "default"
+    },
+    "class_type": "CLIPLoader",
+    "_meta": {
+      "title": "Z-Image 专用文本编码器 · lumina2"
+    }
+  },
+  "96": {
+    "inputs": {
+      "vae_name": "fixture.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "Z-Image 专用 VAE · ae"
+    }
+  },
+  "97": {
+    "inputs": {
+      "shift": 3,
+      "sampling": "flow",
+      "model": [
+        "20",
+        0
+      ]
+    },
+    "class_type": "ModelSamplingAuraFlow",
+    "_meta": {
+      "title": "Z-Image Base · shift 3"
+    }
+  },
+  "98": {
+    "inputs": {
+      "clip_name": "fixture.safetensors",
+      "type": "krea2",
+      "device": "default"
+    },
+    "class_type": "CLIPLoader",
+    "_meta": {
+      "title": "加载CLIP"
+    }
+  },
+  "99": {
+    "inputs": {
+      "vae_name": "fixture.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "加载VAE"
+    }
+  }
+}
