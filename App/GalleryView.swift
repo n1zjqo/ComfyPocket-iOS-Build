@@ -18,6 +18,9 @@ struct GalleryView: View {
                                     VStack(alignment: .leading, spacing: 8) {
                                         AssetThumbnail(asset: asset).frame(height: 180).clipped().cornerRadius(18)
                                         Text(asset.output.kind == .text ? "文字结果" : asset.output.filename).font(.caption).lineLimit(2).foregroundColor(Palette.ink)
+                                        if asset.output.kind != .text, let job = state.job(asset.jobID), !job.prompt(for: asset.promptID).isEmpty {
+                                            Text(job.prompt(for: asset.promptID)).font(.caption).lineLimit(3).foregroundColor(Palette.ink)
+                                        }
                                         Text(asset.createdAt, style: .date).font(.caption2).foregroundColor(.secondary)
                                     }.padding(8).background(Palette.card, in: RoundedRectangle(cornerRadius: 23))
                                 }.buttonStyle(.plain).accessibilityIdentifier("gallery-asset-" + asset.id.uuidString)

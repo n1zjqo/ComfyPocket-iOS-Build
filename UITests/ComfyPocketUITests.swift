@@ -118,6 +118,7 @@ final class ComfyPocketUITests: XCTestCase {
         app.tabBars.buttons["作品"].tap()
         let galleryCards = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH %@", "gallery-asset-"))
         XCTAssertEqual(galleryCards.count, 1)
+        XCTAssertTrue(galleryCards.firstMatch.label.contains("代码绘制的测试画布，不是模型生成结果"))
         XCTAssertEqual(app.staticTexts.matching(identifier: "文字结果").count, 0)
         capture("Gallery — one image card rather than separate duplicate prompt cards", app: app)
         app.tabBars.buttons["生成"].tap()

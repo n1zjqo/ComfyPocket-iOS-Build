@@ -146,8 +146,8 @@
     },
     {
       "path": "App/GalleryView.swift",
-      "bytes": 9313,
-      "sha256": "b91273dede9507a0dade441ca6c11c6e02c4ee12a916f1b9530d15a71b10667d"
+      "bytes": 9642,
+      "sha256": "c4e2d988e8bd949a2c33cbb106a47b0b83076325aa9036384561d6720d0be71f"
     },
     {
       "path": "App/GenerationEngine.swift",
@@ -396,8 +396,8 @@
     },
     {
       "path": "UITests/ComfyPocketUITests.swift",
-      "bytes": 22396,
-      "sha256": "6f13ee5b074f1ead75af2ecfd9ef881ce12674284e74dabe225df91a76ff147b"
+      "bytes": 22516,
+      "sha256": "fc707a6b0e3d7d5b072727eb0bd1b55fa0d78053d4e25eaecebcc7233633ae8e"
     }
   ]
 }
