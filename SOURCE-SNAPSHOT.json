@@ -396,8 +396,8 @@
     },
     {
       "path": "UITests/ComfyPocketUITests.swift",
-      "bytes": 20324,
-      "sha256": "1b096a0f789998b664291800964321c326f9712a88eb71b2d375f1e83f02028b"
+      "bytes": 22135,
+      "sha256": "7acfdee5398f6da19cd3ca5885ba216241385a0409d71814db012c50e952fbbe"
     }
   ]
 }

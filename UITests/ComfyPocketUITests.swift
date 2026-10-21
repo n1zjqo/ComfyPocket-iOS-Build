@@ -110,13 +110,13 @@ final class ComfyPocketUITests: XCTestCase {
         XCTAssertTrue(disclosure.isHittable)
         disclosure.tap()
         XCTAssertTrue(app.staticTexts["负向提示词：模糊，低质量"].exists)
-        XCTAssertEqual(app.staticTexts["代码绘制的测试画布，不是模型生成结果"].count, 1)
+        XCTAssertEqual(app.staticTexts.matching(identifier: "代码绘制的测试画布，不是模型生成结果").count, 1)
         capture("Conversation — original result detail with supplementary text", app: app)
         app.navigationBars.buttons["完成"].tap()
         app.tabBars.buttons["作品"].tap()
         let galleryCards = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH %@", "gallery-asset-"))
         XCTAssertEqual(galleryCards.count, 1)
-        XCTAssertEqual(app.staticTexts["文字结果"].count, 0)
+        XCTAssertEqual(app.staticTexts.matching(identifier: "文字结果").count, 0)
         capture("Gallery — one image card rather than separate duplicate prompt cards", app: app)
         app.tabBars.buttons["生成"].tap()
         let background = app.descendants(matching: .any).matching(identifier: "generation-artwork").firstMatch
@@ -149,6 +149,36 @@ final class ComfyPocketUITests: XCTestCase {
         XCTAssertTrue(close.waitForExistence(timeout: 5))
         close.tap()
         XCTAssertTrue(app.buttons["参数"].waitForExistence(timeout: 5))
+        app.terminate()
+    }
+
+    func testFullscreenSavesAndSharesOriginalArtwork() {
+        continueAfterFailure = false
+        let app = XCUIApplication()
+        app.launchArguments = ["--ui-testing", "--workflow-app-demo", "--artwork-demo", "-AppleLanguages", "(zh-Hans)", "-AppleLocale", "zh_CN"]
+        app.launch()
+        XCTAssertTrue(app.buttons["全屏看图"].waitForExistence(timeout: 10))
+        app.buttons["全屏看图"].tap()
+        let save = app.buttons["保存到相册"]
+        XCTAssertTrue(save.waitForExistence(timeout: 5))
+        XCTAssertTrue(save.isEnabled)
+        capture("Artwork — complete native preview with original-file actions", app: app)
+        save.tap()
+        let permission = XCUIApplication(bundleIdentifier: "com.apple.springboard").alerts.firstMatch
+        if permission.waitForExistence(timeout: 4) {
+            let allow = permission.buttons.matching(NSPredicate(format: "label != %@ AND label != %@ AND label != %@", "不允许", "Don't Allow", "Don’t Allow")).firstMatch
+            XCTAssertTrue(allow.exists)
+            allow.tap()
+        }
+        let result = app.alerts["保存结果"]
+        XCTAssertTrue(result.waitForExistence(timeout: 15))
+        XCTAssertTrue(result.staticTexts["已保存到系统相册。"].exists)
+        capture("Artwork — Photos reports successful real file save", app: app)
+        result.buttons["知道了"].tap()
+        app.buttons["分享原文件"].tap()
+        let systemAction = app.buttons.matching(NSPredicate(format: "label IN %@", ["拷贝", "复制", "Copy", "存储到文件", "Save to Files"])).firstMatch
+        XCTAssertTrue(systemAction.waitForExistence(timeout: 10))
+        capture("Artwork — system original-file share sheet", app: app)
         app.terminate()
     }
 
