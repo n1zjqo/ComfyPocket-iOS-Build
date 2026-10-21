@@ -226,8 +226,8 @@
     },
     {
       "path": "AppTests/LayoutSnapshotTests.swift",
-      "bytes": 18118,
-      "sha256": "7f7be0386d49b9ae661715a4e1a2780a89878c96390812f4f10cab402f02816e"
+      "bytes": 17860,
+      "sha256": "14da2638a3b4c367674e60e7602f093d03c59e5f881df1f65190a15a050b264b"
     },
     {
       "path": "AppTests/ParameterDraftStateTests.swift",

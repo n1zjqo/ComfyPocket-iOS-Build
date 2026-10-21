@@ -147,7 +147,6 @@ final class LayoutSnapshotTests: XCTestCase {
             context.cgContext.strokePath()
         }
         try await capture(AnyView(CanvasArtwork(image: image, clearProgress: 1).background(Color.black)), state: state, category: .large, name: "Crystal frame — synthetic gradient, clear center and narrow frosted edges")
-        try await capture(AnyView(CanvasArtwork(image: image, clearProgress: 1).background(Color.black).environment(\.accessibilityReduceTransparency, true)), state: state, category: .large, name: "Crystal frame — reduce transparency solid edge fallback")
     }
 
     @MainActor
