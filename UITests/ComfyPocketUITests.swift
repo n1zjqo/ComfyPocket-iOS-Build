@@ -110,7 +110,9 @@ final class ComfyPocketUITests: XCTestCase {
         XCTAssertTrue(disclosure.isHittable)
         disclosure.tap()
         XCTAssertTrue(app.staticTexts["负向提示词：模糊，低质量"].exists)
-        XCTAssertEqual(app.staticTexts.matching(identifier: "代码绘制的测试画布，不是模型生成结果").count, 1)
+        let detail = app.scrollViews["asset-detail-content"]
+        XCTAssertTrue(detail.exists)
+        XCTAssertEqual(detail.staticTexts.matching(identifier: "代码绘制的测试画布，不是模型生成结果").count, 1)
         capture("Conversation — original result detail with supplementary text", app: app)
         app.navigationBars.buttons["完成"].tap()
         app.tabBars.buttons["作品"].tap()
@@ -176,7 +178,8 @@ final class ComfyPocketUITests: XCTestCase {
         capture("Artwork — Photos reports successful real file save", app: app)
         result.buttons["知道了"].tap()
         app.buttons["分享原文件"].tap()
-        let systemAction = app.buttons.matching(NSPredicate(format: "label IN %@", ["拷贝", "复制", "Copy", "存储到文件", "Save to Files"])).firstMatch
+        XCTAssertTrue(app.otherElements["ActivityListView"].waitForExistence(timeout: 10))
+        let systemAction = app.cells.matching(NSPredicate(format: "label IN %@", ["拷贝", "复制", "Copy", "存储到文件", "Save to Files"])).firstMatch
         XCTAssertTrue(systemAction.waitForExistence(timeout: 10))
         capture("Artwork — system original-file share sheet", app: app)
         app.terminate()
@@ -205,6 +208,7 @@ final class ComfyPocketUITests: XCTestCase {
         XCTAssertTrue(app.navigationBars["工作流参数"].waitForExistence(timeout: 5))
         capture("Fuyu parameters — simplified groups and draft boundary", app: app)
         app.buttons["parameter-node-canvas"].tap()
+        XCTAssertTrue(app.buttons["parameter-node-canvas"].isSelected)
         let width = app.textFields["field-92|value"]
         scrollToEditableField(width, app: app)
         width.tap()

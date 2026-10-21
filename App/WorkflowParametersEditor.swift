@@ -196,6 +196,7 @@ struct ParameterEditorContent: View {
                 Image(systemName: selected ? "circle.inset.filled" : "circle").foregroundColor(selected ? Palette.accent : .secondary)
             }.padding(.horizontal, 16).padding(.vertical, 7).frame(minHeight: 44)
                 .background(selected ? Palette.accent.opacity(0.08) : Color.clear)
+                .contentShape(Rectangle())
         }.buttonStyle(.plain).accessibilityIdentifier("parameter-node-" + id)
             .accessibilityAddTraits(selected ? .isSelected : [])
     }

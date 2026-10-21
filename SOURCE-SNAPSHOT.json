@@ -146,8 +146,8 @@
     },
     {
       "path": "App/GalleryView.swift",
-      "bytes": 9248,
-      "sha256": "16f76b1d09397a3202ad1fd31152158e9310ae3e5eaff91eb590176814e4a7d1"
+      "bytes": 9313,
+      "sha256": "b91273dede9507a0dade441ca6c11c6e02c4ee12a916f1b9530d15a71b10667d"
     },
     {
       "path": "App/GenerationEngine.swift",
@@ -171,8 +171,8 @@
     },
     {
       "path": "App/ParametersView.swift",
-      "bytes": 2624,
-      "sha256": "e4bc595bda07d2f0819b7d07b3f09cb5a52295e5add7ddbae829970ebed32a11"
+      "bytes": 2645,
+      "sha256": "8d7e2ed68e8bfe92ca39adaf4b6952bd0de30ee26d2225f86993a0be2bef174a"
     },
     {
       "path": "App/PromptTextView.swift",
@@ -201,8 +201,8 @@
     },
     {
       "path": "App/WorkflowParametersEditor.swift",
-      "bytes": 16400,
-      "sha256": "d6eb020b94ea5bef0aeb2bd7c1628bcb5a0a0448bc4175adceba9dfdee28a0bf"
+      "bytes": 16443,
+      "sha256": "7b9a004aae9a374df474effba4395b5929f9210dd558c3893e00724b3e0d6173"
     },
     {
       "path": "App/WorkflowsView.swift",
@@ -396,8 +396,8 @@
     },
     {
       "path": "UITests/ComfyPocketUITests.swift",
-      "bytes": 22135,
-      "sha256": "7acfdee5398f6da19cd3ca5885ba216241385a0409d71814db012c50e952fbbe"
+      "bytes": 22396,
+      "sha256": "6f13ee5b074f1ead75af2ecfd9ef881ce12674284e74dabe225df91a76ff147b"
     }
   ]
 }

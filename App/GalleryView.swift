@@ -118,6 +118,7 @@ struct AssetDetailView: View {
                         Button("删除本地作品", role: .destructive) { deleting = true }.padding(.top, 12)
                     }.padding(18)
                 }
+                .accessibilityIdentifier("asset-detail-content")
                 .sheet(isPresented: $sharing) {
                     if asset.output.kind == .text { ShareSheet(items: [asset.output.text]) }
                     else if let url = localURL(asset) { ShareSheet(items: [url]) }

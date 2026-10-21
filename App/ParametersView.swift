@@ -15,7 +15,7 @@ struct ParametersView: View {
                         .toolbar { ToolbarItem(placement: .confirmationAction) { Button("完成") { dismiss() } } }
                 }
             }
-        }.navigationViewStyle(.stack)
+        }.navigationViewStyle(.stack).tint(Palette.accent)
     }
 }
 
